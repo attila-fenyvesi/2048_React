@@ -1,0 +1,43 @@
+#main-menu
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    text-align: center
+    display: flex
+    flex-direction: column
+
+    header
+        // height: 150px
+        flex-grow: 0
+        flex-shrink: 1
+        flex-basis: 150px
+        line-height: 150px
+        font-size: 100px
+        font-weight: bold
+
+    #button-container
+        flex-grow: 1
+        flex-shrink: 1
+        flex-basis: auto
+        display: flex
+        flex-direction: column
+        justify-content: center
+
+        .menu-btn
+            display: block
+            // flex-grow: 0
+            // flex-shrink: 1
+            // flex-basis: auto
+            // align-self: auto
+            background-color: black
+            color: white
+            margin: 10px auto
+            padding: 10px 20px
+            font-weight: bold
+            font-size: 20px
+            line-height: 20px
+            border: none
+            border-radius: 5px
+            cursor: pointer

@@ -1,7 +1,17 @@
 import "./App.sass";
+import MainMenu from "./components/MainMenu";
+import { Routes, Route } from "react-router-dom";
+import Game from "./components/Game";
 
-function App() {
-  return <div className="App"></div>;
-}
+const App = () => {
+  return (
+    <div id="app">
+      <Routes>
+        <Route path="/" element={<MainMenu />} />
+        <Route path="game" element={<Game />} />
+      </Routes>
+    </div>
+  );
+};
 
 export default App;
