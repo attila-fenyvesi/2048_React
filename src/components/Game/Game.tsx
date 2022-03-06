@@ -8,12 +8,12 @@ import { Direction } from "../../utils/GameLogic";
 
 const Game = () => {
   const { state, dispatch } = useContext(GameContext);
-  const [addRandomTile, moveTiles] = GameLogic();
+  const [startNewGame, moveTiles] = GameLogic();
 
   const onKeyPress = (key: string, e: object) => {
     switch (key) {
       case "enter":
-        addRandomTile();
+        startNewGame();
         break;
       case "up":
         moveTiles(Direction.UP);
@@ -28,7 +28,6 @@ const Game = () => {
         moveTiles(Direction.RIGHT);
         break;
     }
-    console.log(state);
   };
 
   return (

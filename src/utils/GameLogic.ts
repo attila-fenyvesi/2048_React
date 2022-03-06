@@ -158,19 +158,24 @@ const GameLogic = () => {
     }
 
     setTimeout(() => {
+      if (state.isMoving) {
+        addRandomTile();
+      }
       dispatch({
         type: Action.CLEAN_UP,
       });
-    }, 250);
-
-    if (state.isMoving) {
-      setTimeout(() => {
-        addRandomTile();
-      }, 100);
-    }
+    }, 200);
   };
 
-  return [addRandomTile, moveTiles] as [
+  const startNewGame = () => {
+    dispatch({
+      type: Action.INIT_GAME,
+    });
+    addRandomTile();
+    addRandomTile();
+  };
+
+  return [startNewGame, moveTiles] as [
     () => void,
     (direction: Direction) => void
   ];

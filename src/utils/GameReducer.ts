@@ -35,13 +35,9 @@ type ReducerAction =
   | { type: Action.CLEAN_UP };
 
 const GameReducer = (state: GameState, action: ReducerAction) => {
-  console.log(action);
-
   switch (action.type) {
     case Action.INIT_GAME:
-      return {
-        ...state,
-      };
+      return JSON.parse(JSON.stringify(initialState));
 
     case Action.ADD_TILE:
       const pos: Position = action.tile.position;

@@ -13,10 +13,16 @@ export type TileType = {
   merging: boolean;
 };
 
-const Tile = ({ id, position, value }: TileType) => {
+const Tile = ({ id, position, value, merging }: TileType) => {
   const style = {
     top: `${position.y * 112 + 12}px`,
     left: `${position.x * 112 + 12}px`,
+    animation:
+      value === 2
+        ? "Spawn 150ms ease-in both"
+        : merging
+        ? "Merge 150ms ease-in-out alternate-reverse both"
+        : "",
   };
 
   return (
