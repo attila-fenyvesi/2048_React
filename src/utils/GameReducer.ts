@@ -4,6 +4,7 @@ export type GameState = {
   tiles: (TileType | null)[][];
   trash: TileType[];
   isMoving: boolean;
+  score: number;
 };
 
 export const initialState: GameState = {
@@ -15,6 +16,7 @@ export const initialState: GameState = {
   ],
   trash: [],
   isMoving: false,
+  score: 0,
 };
 
 export enum Action {
@@ -67,6 +69,7 @@ const GameReducer = (state: GameState, action: ReducerAction) => {
 
       state.isMoving = true;
       (state.tiles[dstPos.y][dstPos.x] as TileType).value *= 2;
+      state.score += (state.tiles[dstPos.y][dstPos.x] as TileType).value;
       (state.tiles[dstPos.y][dstPos.x] as TileType).blocked = true;
       (state.tiles[dstPos.y][dstPos.x] as TileType).merging = true;
 

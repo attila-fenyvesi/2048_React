@@ -15,8 +15,8 @@ export type TileType = {
 
 const Tile = ({ id, position, value }: TileType) => {
   const style = {
-    top: `${position.y * 112 + 22}px`,
-    left: `${position.x * 112 + 22}px`,
+    top: `${position.y * 112 + 12}px`,
+    left: `${position.x * 112 + 12}px`,
   };
 
   return (
