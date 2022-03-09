@@ -1,6 +1,5 @@
 import { Action } from "./GameReducer";
 import { useContext } from "react";
-import Tile from "../components/Tile";
 import { Position, TileType } from "../components/Tile/Tile";
 import { GameContext } from "./GameContext";
 import { range } from "./Helpers";
@@ -85,8 +84,8 @@ const GameLogic = () => {
       });
     }
 
-    // if (!canMove()) {
-    // }
+    if (!canMove()) {
+    }
   };
 
   const moveTilesInner = (x: number, y: number, direction: Direction) => {
@@ -100,9 +99,8 @@ const GameLogic = () => {
     const from: number = direction & 3 ? y : x;
     const fromShift: number = direction & 5 ? -1 : 1;
     const to: number = direction & 5 ? 0 : 3;
-    const step: number = direction & 5 ? -1 : 1;
 
-    for (let i of range(from + fromShift, to, step)) {
+    for (let i of range(from + fromShift, to)) {
       const x_: number = direction & 3 ? x : i;
       const y_: number = direction & 3 ? i : y;
 
@@ -110,7 +108,6 @@ const GameLogic = () => {
 
       if (targetTile) {
         if (!targetTile.blocked && targetTile.value === currentTile.value) {
-          // Merging
           dispatch({
             type: Action.MERGE_TILES,
             source: { x: x, y: y },
@@ -119,7 +116,6 @@ const GameLogic = () => {
           return;
         } else {
           if (x_prev !== x || y_prev !== y) {
-            // Moving to prev loc.
             dispatch({
               type: Action.MOVE_TILE,
               source: { x: x, y: y },
@@ -129,7 +125,6 @@ const GameLogic = () => {
           return;
         }
       } else if (i === 0 || i === 3) {
-        // Moving to [y_][x_]
         dispatch({
           type: Action.MOVE_TILE,
           source: { x: x, y: y },

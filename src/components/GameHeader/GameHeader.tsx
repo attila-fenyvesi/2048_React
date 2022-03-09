@@ -4,7 +4,7 @@ import Display from "../Display";
 import { Link } from "react-router-dom";
 
 const GameHeader = () => {
-  const { state, dispatch } = useContext(GameContext);
+  const { state } = useContext(GameContext);
 
   return (
     <div id="game-header">

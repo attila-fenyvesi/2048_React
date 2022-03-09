@@ -7,7 +7,7 @@ import { GameContext } from "../../utils/GameContext";
 import { Direction } from "../../utils/GameLogic";
 
 const Game = () => {
-  const { state, dispatch } = useContext(GameContext);
+  const { state } = useContext(GameContext);
   const [startNewGame, moveTiles] = GameLogic();
 
   const onKeyPress = (key: string, e: object) => {

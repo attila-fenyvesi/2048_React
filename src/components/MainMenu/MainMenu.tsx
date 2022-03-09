@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import GameLogic from "../../utils/GameLogic";
 
 const MainMenu = () => {
-  const [startNewGame, moveTiles] = GameLogic();
+  const [startNewGame] = GameLogic();
 
   return (
     <div id="main-menu">

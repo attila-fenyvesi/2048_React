@@ -1,4 +1,4 @@
-import Tile, { TileType, Position } from "../components/Tile/Tile";
+import { TileType, Position } from "../components/Tile/Tile";
 
 export type GameState = {
   tiles: (TileType | null)[][];

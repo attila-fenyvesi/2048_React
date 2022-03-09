@@ -12,7 +12,7 @@ export const range = (
     !Number.isInteger(end) ||
     !Number.isInteger(step)
   ) {
-    throw "Only integer parameters are accepted!";
+    throw new Error("Only integer parameters are accepted!");
   }
 
   const difference = end - start;

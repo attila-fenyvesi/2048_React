@@ -4,7 +4,7 @@ import Tile from "../Tile";
 import { TileType } from "../Tile/Tile";
 
 const Playground = () => {
-  const { state, dispatch } = useContext(GameContext);
+  const { state } = useContext(GameContext);
 
   const gridCells: any[] = [];
   for (let i = 0; i < 16; ++i) {
