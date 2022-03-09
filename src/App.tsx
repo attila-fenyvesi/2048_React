@@ -10,8 +10,8 @@ const App = () => {
     <div id="app">
       <GameProvider>
         <Routes>
-          <Route path="/" element={<MainMenu />} />
-          <Route path="game" element={<Game />} />
+          <Route path="/2048_React/" element={<MainMenu />} />
+          <Route path="/2048_React/game" element={<Game />} />
         </Routes>
       </GameProvider>
     </div>
