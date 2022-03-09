@@ -34,7 +34,7 @@ jobs:
         run: CI=false npm run build
 
       - name: Test
-        run: npm test
+        run: npm test --passWithNoTests
 
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
